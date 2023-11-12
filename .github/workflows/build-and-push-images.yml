@@ -40,13 +40,13 @@ jobs:
         prysmversion="${{ steps.extract-prysm-version.outputs.version }}"
 
         # Build and push the geth image with version tag
-        docker buildx build -t bloknodes/ethereum:geth-latest -t bloknodes/ethereum:geth-${gethversion} -f geth/Dockerfile .
+        docker buildx build -t bloknodes/ethereum:geth-latest -t bloknodes/ethereum:geth-${gethversion} -f geth/Dockerfile --load .
         docker push bloknodes/ethereum:geth-latest
         docker push bloknodes/ethereum:geth-${gethversion}
 
         # Build and push the prysm-beacon image
 
-        docker buildx build -t bloknodes/ethereum:prysm-beacon:latest -t bloknodes/ethereum:prysm-beacon-${prysmversion} -f prysm-beacon/Dockerfile .
+        docker buildx build -t bloknodes/ethereum:prysm-beacon:latest -t bloknodes/ethereum:prysm-beacon-${prysmversion} -f prysm-beacon/Dockerfile --load .
         docker push bloknodes/ethereum:prysm-beacon-latest
         docker push bloknodes/ethereum:prysm-beacon-${prysmversion}
 
