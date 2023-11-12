@@ -46,7 +46,7 @@ jobs:
 
         # Build and push the prysm-beacon image
 
-        docker buildx build -t bloknodes/ethereum:prysm-beacon:latest -t bloknodes/ethereum:prysm-beacon-${prysmversion} -f prysm-beacon/Dockerfile --load .
+        docker buildx build -t bloknodes/ethereum:prysm-beacon-latest -t bloknodes/ethereum:prysm-beacon-${prysmversion} -f prysm-beacon/Dockerfile --load .
         docker push bloknodes/ethereum:prysm-beacon-latest
         docker push bloknodes/ethereum:prysm-beacon-${prysmversion}
 
