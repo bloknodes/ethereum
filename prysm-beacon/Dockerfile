@@ -20,3 +20,4 @@ CMD ["--sepolia", \
      "--genesis-beacon-api-url=https://sepolia.beaconstate.info", \
      "--suggested-fee-recipient=0x6Cc9397c3B38739daCbfaA68EaD5F5D77Ba5F455", \
      "--accept-terms-of-use" ]
+
