@@ -1,5 +1,7 @@
 # ethereum
 
+[![Build Docker Images](https://github.com/bloknodes/ethereum/actions/workflows/build-and-push-images.yml/badge.svg)](https://github.com/bloknodes/ethereum/actions/workflows/build-and-push-images.yml)
+
 Ethereum (geth and prysm) on Docker
 
 ## Pre-Requisites
