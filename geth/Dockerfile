@@ -1,0 +1,27 @@
+# Use the official Geth image
+FROM ethereum/client-go:v1.13.4
+
+# Set up the work directory
+WORKDIR /data
+
+# Expose necessary ports (30303 for P2P, 8545 for JSON-RPC)
+EXPOSE 30303 8545
+
+# Run Geth on the Sepolia testnet with JSON-RPC enabled
+CMD ["--sepolia", \
+     "--datadir", "/data", \
+     "--authrpc.addr", "0.0.0.0", \
+     "--authrpc.port", "8551", \
+     "--authrpc.jwtsecret", "/shared/jwt.hex", \
+     "--authrpc.vhosts", "*", \
+     "--http", \
+     "--http.addr", "0.0.0.0", \
+     "--http.port", "8545", \
+     "--http.vhosts", "*", \
+     "--http.corsdomain", "*", \
+     "--http.api", "eth,net,web3,txpool,engine,admin,personal,debug", \
+     "--ws", "--ws.api eth,web3,net", \
+     "--syncmode", "full", "--gcmode", "archive", \
+     "--metrics", \
+     "--metrics.addr=0.0.0.0", \
+     "--metrics.port=9191" ]

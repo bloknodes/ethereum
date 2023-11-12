@@ -4,6 +4,12 @@ Ethereum (geth and prysm) on Docker
 
 ## Pre-Requisites
 
+Check if docker is installed:
+
+```bash
+make check_docker
+```
+
 Create the shared secret:
 
 ```bash
@@ -15,7 +21,7 @@ openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
 Start the ethereum execution client (geth) and the consensus client (prysm):
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build # or: make up
 ```
 
 ## Monitor the Initial Block Download

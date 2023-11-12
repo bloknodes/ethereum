@@ -2,37 +2,22 @@ version: "3.9"
 
 services:
   geth:
-    image: ethereum/client-go:v1.11.6
+    image: blocknodes/ethereum:geth
+    build:
+      context: ./geth
+      dockerfile: Dockerfile
     container_name: geth
     restart: always
-    stop_grace_period: 2m
+    stop_signal: SIGTERM
+    stop_grace_period: 3m
     ports:
       - 8545:8545
       - 8546:8546
       - 9191:9191
       - 30303:30303
-      - 30304:30304
     volumes:
       - ./data/geth:/data
       - ./jwt.hex:/jwt/jwt.hex:ro
-    command: >
-      --sepolia
-      --syncmode=snap
-      --datadir=/data
-      --http
-      --http.api eth,net,web3,txpool,engine,admin,miner,personal,debug
-      --http.addr 0.0.0.0
-      --http.port 8545
-      --http.corsdomain '*'
-      --ws
-      --ws.api eth,web3,net
-      --authrpc.addr 0.0.0.0
-      --authrpc.port 8551
-      --authrpc.jwtsecret /jwt/jwt.hex
-      --authrpc.vhosts '*'
-      --metrics
-      --metrics.addr=0.0.0.0
-      --metrics.port=9191
     networks:
       - ethnet
     logging:
@@ -42,22 +27,17 @@ services:
         max-file: "3"
 
   prysm-beacon:
-    image: gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+    image: blocknodes/ethereum:prysm-beacon
+    build:
+      context: ./prysm-beacon
+      dockerfile: Dockerfile
     container_name: prysm-beacon
     restart: always
+    stop_signal: SIGTERM
+    stop_grace_period: 1m
     volumes:
       - ./data/prysm-beacon:/data
       - ./jwt.hex:/jwt/jwt.hex:ro
-    command: >
-      --sepolia
-      --datadir=/data
-      --rpc-host=0.0.0.0
-      --execution-endpoint=http://geth:8551
-      --checkpoint-sync-url=https://checkpoint-sync.sepolia.ethpandaops.io
-      --genesis-beacon-api-url=https://checkpoint-sync.sepolia.ethpandaops.io
-      --jwt-secret=/jwt/jwt.hex
-      --genesis-state=/genesis.ssz
-      --accept-terms-of-use
     depends_on:
       geth:
         condition: service_started
