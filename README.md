@@ -4,10 +4,16 @@ Ethereum (geth and prysm) on Docker
 
 ## Pre-Requisites
 
+Check if docker is installed:
+
+```bash
+make check_docker
+```
+
 Create the shared secret:
 
 ```bash
-openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
+openssl rand -hex 32 | tr -d "\n" > "jwt.hex"    # or: make jwt.hex
 ```
 
 ## Start the Containers
@@ -15,7 +21,7 @@ openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
 Start the ethereum execution client (geth) and the consensus client (prysm):
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build # or: make up
 ```
 
 ## Monitor the Initial Block Download
@@ -50,4 +56,10 @@ We can view how many seconds is our node out of sync, by subtracting the current
 echo $$(($(date +%s) - 1671031284))
 ```
 
+## Tear Down
 
+Stop the containers:
+
+```bash
+make down
+```
