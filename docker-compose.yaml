@@ -17,7 +17,7 @@ services:
       - 30303:30303
     volumes:
       - ./data/geth:/data
-      - ./jwt.hex:/jwt/jwt.hex:ro
+      - ./jwt.hex:/shared/jwt.hex:ro
     networks:
       - ethnet
     logging:
@@ -37,7 +37,7 @@ services:
     stop_grace_period: 1m
     volumes:
       - ./data/prysm-beacon:/data
-      - ./jwt.hex:/jwt/jwt.hex:ro
+      - ./jwt.hex:/shared/jwt.hex:ro
     depends_on:
       geth:
         condition: service_started

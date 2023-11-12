@@ -20,7 +20,7 @@ CMD ["--sepolia", \
      "--http.vhosts", "*", \
      "--http.corsdomain", "*", \
      "--http.api", "eth,net,web3,txpool,engine,admin,personal,debug", \
-     "--ws", "--ws.api eth,web3,net", \
+     "--ws", "--ws.api", "eth,web3,net", \
      "--syncmode", "full", "--gcmode", "archive", \
      "--metrics", \
      "--metrics.addr=0.0.0.0", \

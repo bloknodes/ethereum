@@ -13,7 +13,7 @@ make check_docker
 Create the shared secret:
 
 ```bash
-openssl rand -hex 32 | tr -d "\n" > "jwt.hex"
+openssl rand -hex 32 | tr -d "\n" > "jwt.hex"    # or: make jwt.hex
 ```
 
 ## Start the Containers
@@ -56,4 +56,10 @@ We can view how many seconds is our node out of sync, by subtracting the current
 echo $$(($(date +%s) - 1671031284))
 ```
 
+## Tear Down
 
+Stop the containers:
+
+```bash
+make down
+```
