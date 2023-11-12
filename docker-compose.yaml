@@ -20,11 +20,16 @@ services:
       - ./jwt.hex:/shared/jwt.hex:ro
     networks:
       - ethnet
+    healthcheck:
+      test: [ "CMD", "curl", "-XPOST", "-H", "'Content-Type: application/json'", "--data", '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x0", false]}', "http://127.0.0.1:8545" ]
+      interval: "10s"
+      timeout: "10s"
+      retries: 10
     logging:
       driver: "json-file"
       options:
         max-size: "1m"
-        max-file: "3"
+        max-file: "1"
 
   prysm-beacon:
     image: blocknodes/ethereum:prysm-beacon
@@ -47,7 +52,7 @@ services:
       driver: "json-file"
       options:
         max-size: "1m"
-        max-file: "3"
+        max-file: "1"
 
 networks:
   ethnet:
