@@ -1,0 +1,52 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    paths:
+      - 'geth/Dockerfile'
+      - 'prysm-beacon/Dockerfile'
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Extract Version from geth/Dockerfile
+      id: extract-geth-version
+      run: echo "::set-output name=version::$(grep -oP 'FROM ethereum/client-go:v\K[0-9.]+' geth/Dockerfile)"
+
+    - name: Extract Version from prysm-beacon/Dockerfile
+      id: extract-prysm-version
+      run: echo "::set-output name=version::$(grep -oP 'FROM gcr.io/prysmaticlabs/prysm/beacon-chain:v\K[0-9.]+' prysm-beacon/Dockerfile)"
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    - name: Build and Push Docker Image
+      run: |
+        docker buildx create --use
+        docker buildx inspect --bootstrap
+
+        # Extracted version from Dockerfile
+        gethversion="${{ steps.extract-geth-version.outputs.version }}"
+        prysmversion="${{ steps.extract-prysm-version.outputs.version }}"
+
+        # Build and push the geth image with version tag
+        docker buildx build -t bloknodes/ethereum:geth-latest -t bloknodes/ethereum:geth-${gethversion} -f geth/Dockerfile .
+        docker push bloknodes/ethereum:geth-latest
+        docker push bloknodes/ethereum:geth-${gethversion}
+
+        # Build and push the prysm-beacon image
+
+        docker buildx build -t bloknodes/ethereum:prysm-beacon:latest -t bloknodes/ethereum:prysm-beacon-${prysmversion} -f prysm-beacon/Dockerfile .
+        docker push bloknodes/ethereum:prysm-beacon-latest
+        docker push bloknodes/ethereum:prysm-beacon-${prysmversion}
+

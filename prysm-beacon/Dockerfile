@@ -1,5 +1,5 @@
 # Use the official Prysm image
-FROM gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+FROM gcr.io/prysmaticlabs/prysm/beacon-chain:v4.1.1
 
 # Set your ethereum address (default: sepolia-faucet)
 ENV ETHEREUM_ADDRESS=0x6Cc9397c3B38739daCbfaA68EaD5F5D77Ba5F455
