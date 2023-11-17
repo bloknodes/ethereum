@@ -16,6 +16,10 @@ CMD ["--sepolia", \
      "--execution-endpoint=http://geth:8551", \
      "--jwt-secret=/shared/jwt.hex", \
      "--rpc-host=0.0.0.0", \
+     "--grpc-gateway-host=0.0.0.0", \
+     "--grpc-gateway-port=3500", \
+     "--monitoring-host=0.0.0.0", \
+     "--monitoring-port=8080", \
      "--checkpoint-sync-url=https://sepolia.beaconstate.info", \
      "--genesis-beacon-api-url=https://sepolia.beaconstate.info", \
      "--suggested-fee-recipient=0x6Cc9397c3B38739daCbfaA68EaD5F5D77Ba5F455", \
