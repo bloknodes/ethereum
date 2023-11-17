@@ -54,6 +54,25 @@ services:
         max-size: "1m"
         max-file: "1"
 
+  explorer:
+    image: alethio/ethereum-lite-explorer
+    container_name: explorer
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    environment:
+      - APP_NODE_URL=http://geth:8545
+    depends_on:
+      geth:
+        condition: service_started
+    networks:
+      - ethnet
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "1"
+
 networks:
   ethnet:
     name: ethnet
