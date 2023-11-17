@@ -26,7 +26,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "gridPos": {
         "h": 1,
@@ -39,7 +39,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "refId": "A"
         }
@@ -173,7 +173,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -254,7 +255,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(system_memory_allocs{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -265,7 +267,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "system_memory_used{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -276,7 +279,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "system_memory_held{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -291,7 +295,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -372,7 +377,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(system_disk_readbytes{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -383,7 +389,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(system_disk_writebytes{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -399,7 +406,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "gridPos": {
         "h": 1,
@@ -412,7 +419,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "refId": "A"
         }
@@ -422,7 +429,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -505,7 +513,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(p2p_ingress{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -516,7 +525,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(p2p_egress{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -535,7 +545,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -577,7 +587,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "expr": "p2p_peers{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -588,7 +598,7 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "expr": "rate(p2p_dials{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -599,7 +609,7 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "expr": "rate(p2p_serves{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -642,7 +652,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "gridPos": {
         "h": 1,
@@ -655,7 +665,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "refId": "A"
         }
@@ -666,7 +676,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -726,7 +736,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "expr": "chain_head_header{instance=~\"$instance\", job=~\"$job\"}",
@@ -745,7 +756,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -826,7 +837,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "expr": "chain_head_header{instance=~\"$instance\", job=~\"$job\"}",
@@ -839,7 +851,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "chain_head_receipt{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -850,7 +863,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "chain_head_block{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -865,7 +879,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -925,7 +940,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_pending{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -940,7 +956,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1021,7 +1038,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_pending{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1032,7 +1050,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_queued{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1043,7 +1062,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_local{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1058,7 +1078,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1118,7 +1139,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "chain_head_receipt{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1133,7 +1155,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1193,7 +1216,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_queued{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1208,7 +1232,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1268,7 +1293,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "chain_head_block{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1283,7 +1309,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1343,7 +1370,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "txpool_local{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -1586,7 +1614,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1671,7 +1700,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_valid{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1682,7 +1712,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_invalid{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1693,7 +1724,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_underpriced{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1705,7 +1737,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_pending_discard{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1717,7 +1750,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_pending_replace{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1728,7 +1762,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_pending_ratelimit{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1739,7 +1774,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_pending_nofunds{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1750,7 +1786,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_queued_discard{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1762,7 +1799,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_queued_replace{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1774,7 +1812,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_queued_ratelimit{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1786,7 +1825,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(txpool_queued_nofunds{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1803,7 +1843,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "gridPos": {
         "h": 1,
@@ -1816,7 +1856,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "refId": "A"
         }
@@ -1826,7 +1866,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1907,7 +1948,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(eth_db_chaindata_disk_read{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1918,7 +1960,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(eth_db_chaindata_disk_write{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1929,7 +1972,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(eth_db_chaindata_ancient_read{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1940,7 +1984,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(eth_db_chaindata_ancient_write{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -1955,7 +2000,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2036,7 +2082,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_disk_read{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2047,7 +2094,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_disk_write{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2058,7 +2106,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_ancient_read{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2069,7 +2118,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_ancient_write{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2084,7 +2134,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2165,7 +2216,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_disk_size{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2176,7 +2228,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "eth_db_chaindata_ancient_size{instance=~\"$instance\", job=~\"$job\"}",
           "format": "time_series",
@@ -2192,7 +2245,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "gridPos": {
         "h": 1,
@@ -2205,7 +2258,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${datasource}"
           },
           "refId": "A"
         }
@@ -2216,7 +2269,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2297,7 +2350,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "editorMode": "code",
           "expr": "rate(trie_memcache_clean_read{instance=~\"$instance\", job=~\"$job\"}[1m])",
@@ -2311,7 +2365,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(trie_memcache_clean_write{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -2327,7 +2382,8 @@
     },
     {
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "type": "prometheus",
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2408,7 +2464,8 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(trie_memcache_gc_size{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -2420,7 +2477,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(trie_memcache_flush_size{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -2432,7 +2490,8 @@
         },
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "type": "prometheus",
+            "uid": "${datasource}"
           },
           "expr": "rate(trie_memcache_commit_size{instance=~\"$instance\", job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -2444,6 +2503,152 @@
       ],
       "title": "Dirty cache",
       "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 53
+      },
+      "id": 121,
+      "panels": [],
+      "title": "Logging",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${log_datasource}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 54
+      },
+      "id": 122,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${log_datasource}"
+          },
+          "editorMode": "builder",
+          "expr": "sum by(container) (count_over_time({container=\"geth\"} |= `` | logfmt [1m]))",
+          "legendFormat": "{{container}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Log Events for $job (per minute)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${log_datasource}"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 59
+      },
+      "id": 123,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${log_datasource}"
+          },
+          "editorMode": "builder",
+          "expr": "{container=\"geth\"} |= `` | logfmt",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Logs for $job",
+      "type": "logs"
     }
   ],
   "refresh": "10s",
@@ -2454,23 +2659,6 @@
       {
         "current": {
           "selected": false,
-          "text": "Prometheus",
-          "value": "PBFA97CFB590B2093"
-        },
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "DS_PROMETHEUS",
-        "options": [],
-        "query": "prometheus",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "type": "datasource"
-      },
-      {
-        "current": {
-          "selected": true,
           "text": "Prometheus",
           "value": "PBFA97CFB590B2093"
         },
@@ -2493,6 +2681,10 @@
           "text": "geth",
           "value": "geth"
         },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
         "definition": "label_values(chain_head_header,job)",
         "hide": 0,
         "includeAll": false,
@@ -2513,12 +2705,12 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "geth:9191",
           "value": "geth:9191"
         },
         "datasource": {
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "${datasource}"
         },
         "definition": "label_values(chain_head_block{}, instance)",
         "hide": 0,
@@ -2542,7 +2734,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "0.999",
           "value": "0.999"
         },
@@ -2586,11 +2778,29 @@
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "Loki",
+          "value": "P8E80F9AEF21F6940"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "log_datasource",
+        "multi": false,
+        "name": "log_datasource",
+        "options": [],
+        "query": "loki",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -2621,6 +2831,6 @@
   "timezone": "",
   "title": "Geth overview",
   "uid": "FPpjH6Hik",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
