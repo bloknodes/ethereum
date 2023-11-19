@@ -26,6 +26,7 @@ CMD ["--sepolia", \
      "--ws", "--ws.api", "eth,web3,net", \
      "--syncmode", "snap", \
      "--snapshot=false", \
+     "--maxpeers=150", \
      "--metrics", \
      "--metrics.addr=0.0.0.0", \
      "--metrics.port=9191" ]
