@@ -87,6 +87,40 @@ cd ..
 
 Grafana will be exposed on port 3000 and prometheus on port 9090
 
+### Screenshots
+
+**Geth**
+
+Geth System Metrics:
+
+![](./_extras/assets/images/geth-system.png)
+
+Geth Network Metrics:
+
+![](./_extras/assets/images/geth-network.png)
+
+Geth Blockchain Metrics:
+
+![](./_extras/assets/images/geth-blockchain.png)
+
+Geth Database Metrics:
+
+![](./_extras/assets/images/geth-database.png)
+
+Geth Logs:
+
+![](./_extras/assets/images/geth-logging.png)
+
+**Prysm**
+
+Prysm Metrics:
+
+![](./_extras/assets/images/prysm-metrics.png)
+
+Prysm Logs:
+
+![](./_extras/assets/images/prysm-logs.png)
+
 ## Tear Down
 
 Stop the containers:
